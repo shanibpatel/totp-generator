@@ -45,6 +45,13 @@
       <h1 class="title">TOTP Token Generator</h1>
 
       <div class="field">
+        <label class="label is-uppercase">Nickname</label>
+        <div class="control">
+          <input class="input" type="text" v-model="nickname" placeholder="Enter a nickname">
+        </div>
+      </div>
+
+      <div class="field">
         <label class="label is-uppercase">Your Secret Key</label>
         <div class="control">
           <input class="input" type="text" v-model="secret_key" placeholder="The secret key (in base-32 format)">
@@ -67,7 +74,7 @@
 
       <div class="content">
         <span class="has-text-grey is-size-7">Updating in {{ updatingIn }} seconds</span>
-        <progress class="progress is-info is-small" v-bind:value="updatingIn" :max="period"></progress>
+        <progress class="progress is-info is-medium" v-bind:value="updatingIn" :max="period"></progress>
       </div>
 
       <div class="box">
@@ -78,6 +85,15 @@
         <a class="button is-large is-light is-pulled-right" id="clipboard-button" data-clipboard-target="#token" title="Copy token to clipboard">
           <img src="img/clippy.svg" height="36" width="36">
         </a>
+
+        <button class="button is-primary" @click="saveSecretKey">Save Secret Key</button>
+      </div>
+
+      <div>
+        <label class="label is-uppercase">Recently Added Secret Keys</label>
+        <ul>
+          <li v-for="key in recentKeys" :key="key.timestamp">{{ key.nickname }}: {{ key.key }}</li>
+        </ul>
       </div>
 
     </div>
