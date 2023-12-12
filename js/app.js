@@ -121,6 +121,12 @@ document.addEventListener('DOMContentLoaded', function () {
           this.recentKeys = JSON.parse(storedKeys);
         }
       },
+
+      // Method to fill the secret_key input when double-clicking on a recently added key
+      fillSecretKey(value) {
+        this.secret_key = value;
+      },
+
     }
   });
 

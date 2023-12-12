@@ -90,9 +90,14 @@
       </div>
 
       <div>
-        <label class="label is-uppercase">Recently Added Secret Keys</label>
+        <label class="label is-uppercase">Recently Added Secret Keys: (Double Click on the key below to auto select in Secret key field above)</label>
+        <label class="label has-text-danger">
+          (Note: This secret keys are stored locally in your browser and is not shared with anyone else)
+        </label>        
         <ul>
-          <li v-for="key in recentKeys" :key="key.timestamp">{{ key.nickname }}: {{ key.key }}</li>
+          <li v-for="key in recentKeys" :key="key.timestamp" @dblclick="fillSecretKey(key.key)">
+            {{ key.nickname }}: {{ key.key }}
+          </li>
         </ul>
       </div>
 
