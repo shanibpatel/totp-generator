@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const app = Vue.createApp({
     data() {
       return {
+        nickname: '', // Added nickname property
         secret_key: 'JBSWY3DPEHPK3PXP',
         digits: 6,
         period: 30,
@@ -103,12 +104,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       },
 
-      // Function to save the secret key in localStorage
+      // Function to save the secret key and nickname in localStorage
       saveSecretKey() {
         if (this.secret_key.trim() !== '') {
-          this.recentKeys.unshift({ key: this.secret_key, timestamp: Date.now() });
+          this.recentKeys.unshift({ nickname: this.nickname, key: this.secret_key, timestamp: Date.now() });
           localStorage.setItem('recentKeys', JSON.stringify(this.recentKeys));
-          this.secret_key = ''; // Clear the input after saving
+          this.nickname = ''; // Clear the nickname input after saving
+          this.secret_key = ''; // Clear the secret key input after saving
         }
       },
 

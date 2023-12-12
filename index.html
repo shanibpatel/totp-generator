@@ -45,6 +45,13 @@
       <h1 class="title">TOTP Token Generator</h1>
 
       <div class="field">
+        <label class="label is-uppercase">Nickname</label>
+        <div class="control">
+          <input class="input" type="text" v-model="nickname" placeholder="Enter a nickname">
+        </div>
+      </div>
+
+      <div class="field">
         <label class="label is-uppercase">Your Secret Key</label>
         <div class="control">
           <input class="input" type="text" v-model="secret_key" placeholder="The secret key (in base-32 format)">
@@ -85,11 +92,9 @@
       <div>
         <label class="label is-uppercase">Recently Added Secret Keys</label>
         <ul>
-          <li v-for="key in recentKeys" :key="key.timestamp">{{ key.key }}</li>
+          <li v-for="key in recentKeys" :key="key.timestamp">{{ key.nickname }}: {{ key.key }}</li>
         </ul>
       </div>
-      
-      
 
     </div>
 
