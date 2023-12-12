@@ -12,6 +12,7 @@
 
     html, body {
       height: 100%;
+      font-family: 'Arial', sans-serif;
     }
 
     body > footer {
@@ -23,11 +24,16 @@
       padding: 2rem;
     }
 
-    @media screen and (min-width: 1068px) {
+    @media screen and (min-width: 768px) {
       .container {
         max-width: 600px;
-        width: 600px;
+        width: 80%;
+        margin: 0 auto;
       }
+    }
+
+    .note {
+      color: #e74c3c;
     }
   </style>
 </head>
@@ -87,13 +93,13 @@
         </a>
 
         <button class="button is-primary" @click="saveSecretKey">Save Secret Key</button>
+        <p class="note">
+          (Note: Secret keys are stored locally in your browser and are not shared with anyone else)
+        </p>
       </div>
 
       <div>
-        <label class="label is-uppercase">Recently Added Secret Keys: (Double Click on the key below to auto select in Secret key field above)</label>
-        <label class="label has-text-danger">
-          (Note: This secret keys are stored locally in your browser and is not shared with anyone else)
-        </label>        
+        <label class="label is-uppercase">Recently Added Secret Keys</label>
         <ul>
           <li v-for="key in recentKeys" :key="key.timestamp" @dblclick="fillSecretKey(key.key)">
             {{ key.nickname }}: {{ key.key }}
@@ -108,6 +114,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
+        Developed by <a href="https://github.com/shanibpatel">Shani Patel</a>.
       </div>
     </div>
   </footer>
