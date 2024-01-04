@@ -1,0 +1,60 @@
+/* custom-style.css */
+
+/* Override Bulma styles */
+body {
+    background-color: #f5f0fa; /* Light purple background */
+  }
+  
+  .title {
+    color: #8c6db4; /* Light purple title color */
+  }
+  
+  .input {
+    border-color: #8c6db4; /* Light purple border color for inputs */
+  }
+  
+  .button.is-primary {
+    background-color: #8c6db4; /* Light purple background color for primary button */
+    color: #fff; /* White text color for primary button */
+  }
+  
+  .has-text-grey {
+    color: #95a5a6; /* Gray text color */
+  }
+  
+  /* Customize the note color */
+  .note {
+    color: #c62828; /* Dark red note color */
+  }
+  
+  /* Adjust progress bar styles */
+  .progress.is-info {
+    height: 15px; /* Increase the height of the progress bar */
+  }
+  
+  /* Style the box */
+  .box {
+    background-color: #f0ebf4; /* Light background color for the box */
+    border-color: #8c6db4; /* Border color for the box */
+  }
+  
+  /* Adjust button styles */
+  .button.is-light {
+    background-color: #fff; /* White background color for light button */
+    border-color: #f0ebf4; /* Border color for light button */
+    color: #8c6db4; /* Light purple text color for light button */
+  }
+  
+  /* Style the footer */
+  .footer {
+    background-color: #7f57af; /* Light purple background color for the footer */
+    color: #fff; /* Light text color for the footer */
+    padding: 2rem;
+  }
+  
+  /* Customize links in the footer */
+  .footer a {
+    color: #010002; /* Light purple color for links in the footer */
+  }
+  
+  /* Add your additional styles here */
